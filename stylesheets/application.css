@@ -1,0 +1,13 @@
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  background: gray;
+}
+
+.hours, .mins, .secs, .ampm {
+  font-size: 30px;
+  color: white;
+}

@@ -20027,6 +20027,14 @@ var Clock = function (_React$Component) {
   }
 
   _createClass(Clock, [{
+    key: "padNum",
+    value: function padNum(num) {
+      if (num < 10) {
+        return "0" + ("" + num);
+      }
+      return "" + num;
+    }
+  }, {
     key: "incrementTime",
     value: function incrementTime() {
       setInterval(this.incrementSeconds.bind(this), 1000);

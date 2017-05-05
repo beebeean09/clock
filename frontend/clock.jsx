@@ -19,6 +19,15 @@ class Clock extends React.Component {
   }
 
 
+    padNum(num) {
+      if (num < 10) {
+        return "0" + `${num}`;
+      }
+      return `${num}`;
+    }
+
+
+
 
   incrementTime() {
     setInterval(this.incrementSeconds.bind(this), 1000);

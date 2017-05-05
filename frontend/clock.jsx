@@ -26,8 +26,37 @@ class Clock extends React.Component {
       return `${num}`;
     }
 
+    incrementSeconds() {
+      let sec = this.state.seconds;
 
+      if (sec < 59) {
+        this.setState({seconds: sec += 1});
+      } else {
+        this.setState({seconds: sec = 0 });
+        this.incrementMinute();
+      }
+    }
 
+    incrementMinute() {
+      let mins = this.state.mins;
+
+      if (mins < 59) {
+        this.setState({mins: mins += 1});
+      } else {
+        this.setState({mins: mins = 0});
+        this.incrementHour();
+      }
+    }
+
+    incrementHour() {
+      let hours = this.state.hours;
+
+      if (hours < 12) {
+        this.setState({hours: hours += 1});
+      } else {
+        this.setState({hours : hours = 1});
+      }
+    }
 
   incrementTime() {
     setInterval(this.incrementSeconds.bind(this), 1000);

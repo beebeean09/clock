@@ -20035,6 +20035,41 @@ var Clock = function (_React$Component) {
       return "" + num;
     }
   }, {
+    key: "incrementSeconds",
+    value: function incrementSeconds() {
+      var sec = this.state.seconds;
+
+      if (sec < 59) {
+        this.setState({ seconds: sec += 1 });
+      } else {
+        this.setState({ seconds: sec = 0 });
+        this.incrementMinute();
+      }
+    }
+  }, {
+    key: "incrementMinute",
+    value: function incrementMinute() {
+      var mins = this.state.mins;
+
+      if (mins < 59) {
+        this.setState({ mins: mins += 1 });
+      } else {
+        this.setState({ mins: mins = 0 });
+        this.incrementHour();
+      }
+    }
+  }, {
+    key: "incrementHour",
+    value: function incrementHour() {
+      var hours = this.state.hours;
+
+      if (hours < 12) {
+        this.setState({ hours: hours += 1 });
+      } else {
+        this.setState({ hours: hours = 1 });
+      }
+    }
+  }, {
     key: "incrementTime",
     value: function incrementTime() {
       setInterval(this.incrementSeconds.bind(this), 1000);
